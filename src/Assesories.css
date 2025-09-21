@@ -1,0 +1,125 @@
+
+.accessories-page {
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  width: 100vw;
+
+  /* circular background */
+  background: radial-gradient(circle at center, #ff0000 0%, #222 60%, #111 100%);
+  color: white;
+}
+
+.accessories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.accessories-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accessories-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.image-wrap img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-body {
+  margin-top: 1rem;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  color: #ff4d4d;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.quantity button {
+  background: #ff0000;
+  border: none;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+.quantity button:hover {
+  background: #cc0000;
+}
+
+.add-cart {
+  margin-top: 0.5rem;
+  background: linear-gradient(135deg, #ff0000, #aa0000);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.add-cart:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ff3333, #cc0000);
+}
+
+.cart-preview {
+  margin-top: 2.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.cart-preview h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.cart-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.muted {
+  color: #aaa;
+}
+
+.cart-list {
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0;
+  text-align: left;
+}
