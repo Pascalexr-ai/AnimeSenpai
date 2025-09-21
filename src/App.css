@@ -1,33 +1,38 @@
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg,#111 0%,#222 50%,#ff0000 100%);
+/* Ensure the body takes full viewport height */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html,body,#root{
-    height: 80%;
-    margin: 0;
-}
-.Register{
+/* Make Register responsive */
+.Register {
     text-align: center;
     padding-left: 20px;
     padding-bottom: 5%;
     border-radius: 10px;
-    width: 400px;
+    width: 90%;          /* Instead of fixed 400px */
+    max-width: 400px;    /* Keeps your original size on large screens */
     gap: 10px;
-    margin-top: 50px;
-    margin-left: 40px;
-   -webkit-backdrop-filter: blur(10px);
+    margin: 50px auto 40px auto; /* Centers on all screen sizes */
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 0,0, 0.2);
     background-color: rgba(255, 0, 0,0.2);
-    background: linear-gradient(-20deg,rgba(17,17,17,0.5)50%,
-                                         rgba(255,0,0,0.5)50%  );
+    background: linear-gradient(-20deg,rgba(17,17,17,0.5)50%, rgba(255,0,0,0.5)50%);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-    margin-bottom: 40px;
-
 }
+
+/* Optional: Small screens tweak */
+@media screen and (max-width: 480px) {
+    .Register {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5%;
+    }
+}
+
 
 
 

@@ -1,97 +1,112 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    background: #111; /* dark background */
     color: black;
-  
-}
-.Shop-now{
-   background: var(--accent);
-  border: none;
-  width: 90px;
-  height: 55px;
-  padding: 10px;
-  color: #fff;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-  margin-left: 1120px;
-  transition: transform .12s ease, background .12s ease;
-}
-.Shop-now:hover{
-   transform: translateY(-3px);
-  background: #cc0000;
-  width: 90px;
-  height: 55px;
-}
-.Anime{
-  align-items: left;
-  left: 10;
-  text-align: left;
-  margin-right: 1000px;
-  margin-bottom: 20px;
-  text-decoration: none;
-  color: grey;
-  margin-top: 0;
- 
 }
 
-.Login{
-    text-align: center;
-    padding-left: 20px;
-    padding-bottom: 5%;
+/* Container for Login */
+.Login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
     border-radius: 12px;
-    margin-left: 400px;
-    width: 400px;
-    gap: 10px;
-    margin-top: 90px;
-   -webkit-backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 400px;
+    gap: 15px;
+    margin: 20px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 0,0, 0.1);
-    background-color: rgba(255, 0, 0,0.1);
-    background: linear-gradient(-20deg,rgba(17,17,17,0.5)50%,
-                                         rgba(255,0,0,0.5)50%  );
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    background: linear-gradient(-20deg, rgba(17,17,17,0.5) 50%, rgba(255,0,0,0.5) 50%);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    color: grey;
+    text-align: center;
+}
 
+/* Login header */
+.Login-header {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: grey;
 }
-input[type = "text"]{
-    border: solid rgba(255, 0, 0,0.3);
+
+/* Inputs */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 0, 0, 0.3);
     border-radius: 5px;
-    background-color: rgba(255, 0, 0,0.1);
-    font-size: 1em;
+    background-color: rgba(255, 0, 0, 0.1);
     color: rgb(5, 5, 5);
+    font-size: 1rem;
     box-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
 }
-input[type = "password"]{
-   border: solid rgba(255, 0, 0,0.3);
-    border-radius: 5px  ;
-    background-color: rgba(255, 0, 0,0.1);
-    font-size: 1em;
-    color: rgb(5, 5, 5);
-     box-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+
+/* Buttons */
+.But, .Shop-now {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid rgba(255,0,0,0.3);
+    background-color: rgba(255,0,0,0.1);
+    color: #fff;
+    transition: all 0.2s ease;
+    text-align: center;
 }
-.Link{
-  text-decoration: none;
-  color: grey;
+
+/* Hover effects */
+.But:hover, .Shop-now:hover {
+    background-color: rgba(255,0,0,0.5);
+    border-color: rgba(255,0,0,0.5);
+    box-shadow: 0 0 8px rgba(255,0,0,0.7);
+    color: grey;
+    transform: translateY(-3px);
 }
-.But{
-  background-color: rgba(255, 0, 0,0.1);
-   border: solid rgba(255, 0, 0,0.3);
-   border-radius: 5px  ;
+
+/* Shop Now button */
+.Shop-now {
+    width: 90px;
+    height: 55px;
+    margin-top: 15px;
 }
-.But:hover{
-  background-color: rgba(255, 0, 0,0.5);
-   border: solid rgba(255, 0, 0,0.5);
-   border-radius: 5px  ;
-   color:grey;
-    box-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+
+/* Anime link */
+.Anime {
+    text-decoration: none;
+    color: grey;
+    margin-top: 10px;
+    text-align: left;
 }
-.Login-header{
-  color: grey;
+
+/* Text styling */
+.Text {
+    color: grey;
+    font-size: 0.95rem;
 }
-.Text{
-  color: grey;
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+    .Login {
+        width: 95%;
+        padding: 20px;
+    }
+    .Shop-now {
+        width: 80px;
+        height: 50px;
+    }
 }
+
 
 

@@ -4,6 +4,7 @@
   --muted: #aaa;
 }
 
+/* Page */
 .clothing-page {
   min-height: 100vh;
   padding: 28px;
@@ -18,16 +19,16 @@
   color: var(--accent);
 }
 
-/* grid */
+/* Grid */
 .clothing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* smaller min-width for responsiveness */
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto 32px;
 }
 
-/* card */
+/* Card */
 .clothing-card {
   background: var(--card);
   border: 1px solid rgba(255,255,255,0.06);
@@ -45,21 +46,23 @@
   border-color: rgba(255,0,0,0.18);
 }
 
+/* Image */
 .image-wrap {
   width: 100%;
-  height: 200px;
+  height: auto; /* responsive height */
   overflow: hidden;
   background: #222;
 }
 
 .image-wrap img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 200px;
   object-fit: cover;
   display: block;
 }
 
-/* content */
+/* Content */
 .card-body {
   padding: 12px 14px 18px;
   display: flex;
@@ -69,7 +72,7 @@
 
 .product-name {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 2vw, 1.05rem); /* responsive font */
 }
 
 .price {
@@ -78,7 +81,7 @@
   margin: 4px 0 8px;
 }
 
-/* quantity */
+/* Quantity */
 .quantity {
   display: flex;
   align-items: center;
@@ -103,11 +106,12 @@
   font-weight: 600;
 }
 
-/* add to cart */
+/* Add to cart */
 .add-cart {
   background: var(--accent);
   border: none;
-  width: 90px;
+  width: 100%;
+  max-width: 90px;
   height: 55px;
   padding: 10px;
   color: #fff;
@@ -120,18 +124,15 @@
 .add-cart:hover {
   transform: translateY(-3px);
   background: #cc0000;
-  width: 90px;
-  height: 55px;
 }
 
-/* cart preview */
+/* Cart preview */
 .cart-preview {
   max-width: 900px;
   margin: 0 auto;
   border-top: 1px dashed rgba(255,255,255,0.04);
   padding-top: 18px;
-  width: 90px;
-  height: 55px;
+  width: 90%;
   color: var(--muted);
 }
 
@@ -144,6 +145,7 @@
 .muted {
   color: var(--muted);
 }
+
 .cart-icon-container {
   position: relative;
   display: inline-block;
@@ -166,3 +168,32 @@
   border-radius: 50%;
   padding: 4px 7px;
 }
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .clothing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .image-wrap img {
+    max-height: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .clothing-grid {
+    grid-template-columns: 1fr; /* stack cards vertically */
+  }
+  .add-cart {
+    max-width: 100%;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  .image-wrap img {
+    max-height: 150px;
+  }
+  .quantity button {
+    padding: 5px 8px;
+    font-size: 0.85rem;
+  }
+}
+
